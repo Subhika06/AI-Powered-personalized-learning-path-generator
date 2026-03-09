@@ -1,0 +1,68 @@
+# AI Powered Personalized Learning Path Generator
+
+def generate_learning_path(skill_level, goal):
+
+    learning_paths = {
+        "python": {
+            "beginner": [
+                "Learn Python Basics",
+                "Variables and Data Types",
+                "Control Statements",
+                "Functions",
+                "Basic Projects"
+            ],
+            "intermediate": [
+                "Object Oriented Programming",
+                "File Handling",
+                "Modules and Packages",
+                "Error Handling",
+                "Build Mini Projects"
+            ],
+            "advanced": [
+                "Data Structures in Python",
+                "APIs and Web Scraping",
+                "Machine Learning Basics",
+                "Automation Projects"
+            ]
+        },
+
+        "java": {
+            "beginner": [
+                "Java Basics",
+                "Variables and Data Types",
+                "Loops and Conditions",
+                "Methods",
+                "Simple Programs"
+            ],
+            "intermediate": [
+                "Object Oriented Programming",
+                "Collections Framework",
+                "Exception Handling",
+                "File Handling",
+                "Mini Projects"
+            ],
+            "advanced": [
+                "Multithreading",
+                "JDBC",
+                "Spring Basics",
+                "Real Time Applications"
+            ]
+        }
+    }
+
+    if goal in learning_paths and skill_level in learning_paths[goal]:
+        return learning_paths[goal][skill_level]
+    else:
+        return ["No learning path available for this input"]
+
+
+print("AI Personalized Learning Path Generator")
+
+skill = input("Enter your skill level (beginner/intermediate/advanced): ").lower()
+goal = input("Enter learning goal (python/java): ").lower()
+
+path = generate_learning_path(skill, goal)
+
+print("\nYour Personalized Learning Path:")
+for step in path:
+    print("- " + step)
